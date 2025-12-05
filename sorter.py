@@ -1,8 +1,18 @@
 import argparse
 import shutil
 import asyncio
+import logging
 from pathlib import Path
 
+
+logging.basicConfig(
+    format='%(asctime)s, %(message)s',
+    level=logging.DEBUG,
+        handlers=[
+            logging.FileHandler('program log'),
+            logging.StreamHandler()
+        ]
+)
 
 def parse_args():
     """Function that parse arguments from cli"""
